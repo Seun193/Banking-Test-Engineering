@@ -1,42 +1,45 @@
-# AI Test Automation Lab
+# Banking Test Engineering
 
-A hands-on portfolio and training project for practising AI-assisted Test Automation using:
+This repository holds requirement-driven test engineering for retail banking payments. Work is analysed from Azure DevOps source items, constrained by repository governance, and implemented only after human review.
+
+The engineering stack includes:
 
 - Azure DevOps Boards for Features, Development Stories, Manual QA Stories and TA Stories
-- Cursor project rules (`.mdc`) for governed AI-assisted QA/TA work
-- GitHub for source control and portfolio documentation
-- Robot Framework, Playwright, Python and API automation as the lab grows
-- CI/CD later in the project
+- Cursor project rules (`.mdc`) for governed AI-assisted QA and test automation
+- GitHub for source control and engineering documentation
+- Robot Framework, Playwright, Python and API automation
+- CI as a quality gate, with retained test evidence
 
 ## Core workflow
 
 ```text
 Business Requirement
-        ↓
+        →
 Azure DevOps Feature
-        ↓
+        →
 Development Story
-        ↓
-Manual QA Story
-        ↓
-Cursor + MDC Requirement Analysis
-        ↓
-Test Automation Story
-        ↓
-Human TA Review / Approval
-        ↓
-Automation Implementation
-        ↓
-Execution + CI
-        ↓
-Evidence / Results
+        →
+Manual QA Analysis
+        →
+Test Automation Analysis
+        →
+TA Story
+        →
+Human Review
+        →
+API / UI Automation
+        →
+CI Quality Gate
+        →
+Test Evidence
 ```
 
-## Important principle
+## Governance
 
-AI does not replace requirement analysis.
+AI-assisted analysis does not replace requirement analysis.
 
-Cursor must:
+Analysis must:
+
 1. read the Feature;
 2. read the Development Story and Acceptance Criteria;
 3. read the Manual Testing Story;
@@ -44,17 +47,20 @@ Cursor must:
 5. create a traceable Test Automation Story;
 6. wait for review before implementing automated tests.
 
-Cursor must not invent missing business rules, limits, units, error messages or test data.
+AI-assisted analysis is governed by repository rules and must not invent undocumented business rules, limits, validation behaviour, error messages, or test data.
 
-## Practice Project 1
+## Domestic Transfer Validation
 
-**Feature:** Domestic Money Transfer
+**Use case:** Domestic Money Transfer
 
-This first exercise deliberately contains enough detail to begin meaningful TA analysis while leaving room to practise requirement-gap detection.
+Domestic transfer validation is an engineering use case for requirement-driven API and UI automation. Source work items define the business goal, development acceptance criteria, and manual QA coverage. Automated coverage is derived from those artefacts after analysis and review.
 
 See:
-- `requirements/features/1001-domestic-money-transfer.md`
-- `requirements/dev-stories/1011-transfer-validation.md`
-- `requirements/manual-testing/1021-transfer-validation-manual-qa.md`
 
-The TA Story is intentionally **not included**. Cursor should generate it from the source work items.
+- `requirements/features/116-domestic-money-transfer.md`
+- `requirements/dev-stories/117-transfer-validation.md`
+- `requirements/manual-testing/118-transfer-validation-manual-qa.md`
+- `docs/test-strategy/domestic-transfer-test-strategy.md`
+- `docs/work-items/domestic-transfer-work-item-hierarchy.md`
+
+A Test Automation Story is not included until it has been generated from the source work items and reviewed.

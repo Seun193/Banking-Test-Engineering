@@ -1,4 +1,4 @@
-# Manual QA Story 1021 — Validate Domestic Transfer Validation
+# Manual QA Story 118 — Validate Domestic Transfer Validation
 
 ## Objective
 

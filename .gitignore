@@ -25,3 +25,6 @@ Thumbs.db
 
 # Banking project environment
 Bank/
+
+# Local notes (not published)
+private-notes/
