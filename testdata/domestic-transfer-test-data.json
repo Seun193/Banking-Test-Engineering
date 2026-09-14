@@ -1,0 +1,9 @@
+{
+    "retail_user": "TEST-USER-001",
+    "eligible_debit_account": "TEST-DEBIT-001",
+    "valid_beneficiary": "TEST-BENEFICIARY-001",
+    "valid_transfer": {
+      "amount": "25.00",
+      "currency": "EUR"
+    }
+  }
