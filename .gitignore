@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Test output
+output.xml
+log.html
+report.html
+playwright-report/
+test-results/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.key
+*.pem
+.env.*
+
+# Banking project environment
+Bank/

@@ -1,0 +1,39 @@
+---
+description: Use when implementing an approved Test Automation Story.
+alwaysApply: false
+---
+
+# Test Automation Implementation Rule
+
+Only implement automation from an approved TA Story or clearly approved automation scope.
+
+Before coding:
+1. identify the TA Story and scenarios being implemented;
+2. verify required test data and preconditions exist;
+3. verify unresolved blockers do not affect the selected scenarios;
+4. inspect the existing repository and reuse established patterns.
+
+## Implementation principles
+
+- Keep tests readable and deterministic.
+- Separate test intent from low-level implementation details.
+- Reuse existing keywords, fixtures, page objects and API clients where appropriate.
+- Do not duplicate helpers unnecessarily.
+- Use stable selectors for UI automation.
+- Do not use fixed sleeps when a condition-based wait is available.
+- Keep test data controlled and non-sensitive.
+- Add meaningful assertions for the business outcome.
+- Include negative assertions where relevant.
+- Do not weaken assertions just to make a test pass.
+- Do not change product requirements to fit the automation.
+
+## Before finishing
+
+Report:
+- files changed;
+- scenarios implemented;
+- scenarios not implemented;
+- test command used;
+- execution result;
+- blockers / assumptions;
+- requirement-to-test traceability.

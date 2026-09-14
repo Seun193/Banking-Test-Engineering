@@ -1,0 +1,178 @@
+---
+description: Use when analysing a Feature, Development Story and Manual QA Story to create a Test Automation Story.
+alwaysApply: false
+---
+
+# Test Automation Story Generator
+
+You are acting as a Senior Test Automation Engineer.
+
+Before creating a Test Automation Story, read all available source material:
+
+1. Feature / business requirement
+2. Development Story
+3. Acceptance Criteria
+4. Manual Testing Story
+5. Manual test cases, if available
+6. API/UI/schema/technical documentation, if relevant
+
+## Step 1 — Establish traceability
+
+Build this relationship:
+
+Feature
+→ Development Story
+→ Acceptance Criteria
+→ Manual QA Scenarios
+→ Proposed Automation Scenarios
+
+Every proposed automated scenario must trace to:
+- a requirement;
+- an acceptance criterion;
+- a documented QA scenario; or
+- a clearly justified risk.
+
+Do not invent business requirements.
+
+## Step 2 — Requirement completeness check
+
+Check for:
+
+- expected behaviour;
+- acceptance criteria;
+- business rules;
+- mandatory and optional fields;
+- allowed values;
+- minimum/maximum values;
+- boundary behaviour;
+- units of measurement;
+- validation rules;
+- error behaviour/messages;
+- roles and permissions;
+- authentication requirements;
+- test data;
+- preconditions;
+- postconditions;
+- environment dependencies;
+- API request/response expectations;
+- database expectations, where relevant.
+
+### Units
+
+If a requirement mentions or logically depends on units:
+- verify the unit is explicitly defined;
+- verify valid/invalid unit behaviour if applicable;
+- verify conversion behaviour if applicable;
+- verify suitable test data exists.
+
+If these are missing, do not guess.
+
+## Step 3 — Compare Development and Manual QA coverage
+
+Identify:
+
+- requirements covered by both;
+- requirements missing from Manual QA;
+- Manual QA scenarios not supported by the requirement;
+- acceptance-criteria gaps;
+- inconsistencies;
+- automation candidates;
+- scenarios that should remain manual.
+
+## Step 4 — Negative and boundary analysis
+
+Consider applicable cases such as:
+
+- missing mandatory input;
+- invalid input;
+- invalid format;
+- zero/negative values;
+- min/max boundaries;
+- just-below and just-above boundaries;
+- unauthorised access;
+- invalid or expired authentication;
+- duplicate submission;
+- invalid API payload;
+- unexpected API response;
+- unavailable dependent service;
+- invalid state transition;
+- empty result.
+
+Only include scenarios supported by the documented behaviour or a justified QA risk.
+
+## Step 5 — Create the TA Story
+
+Use this structure:
+
+# TA Story: <title>
+
+## Objective
+
+## Source Work Items
+List Feature, Development Story and Manual QA Story IDs/titles when available.
+
+## Requirement Traceability
+Map acceptance criteria / requirements to proposed automation scenarios.
+
+## Automation Scope
+
+## Scenarios to Automate
+Use only applicable groups:
+- Positive
+- Negative
+- Boundary
+- Validation
+- API
+- UI
+- Integration
+
+For every scenario include:
+- source requirement / acceptance criterion;
+- test intent;
+- expected result;
+- automation level.
+
+## Test Data Requirements
+State the data required for each relevant scenario.
+Do not silently invent business-valid data.
+
+## Preconditions
+
+## Recommended Automation Approach
+Choose the most appropriate level:
+- API
+- UI
+- integration
+- database
+- end-to-end
+
+Prefer a lower, more reliable layer when it proves the same behaviour.
+
+## Framework / Components
+Use technologies already established in the repository unless there is a justified reason not to.
+
+## Acceptance Criteria for the TA Story
+Use measurable completion criteria, including:
+- agreed scenarios implemented;
+- assertions verify expected behaviour;
+- tests are repeatable and independent;
+- test data is controlled;
+- failures are diagnosable;
+- tests can run in CI where appropriate;
+- documentation is updated.
+
+## Risks / Dependencies
+
+## Missing / Ambiguous Information
+State exactly what is missing and why it affects testing or automation.
+Mark affected scenarios as `BLOCKED` or `NEEDS CLARIFICATION`.
+
+## Recommendation
+State whether the TA Story is:
+- READY FOR REVIEW
+- PARTIALLY BLOCKED
+- BLOCKED
+
+## Implementation gate
+
+Do not write automation code as part of this task unless the user explicitly asks for implementation after reviewing the TA Story.
